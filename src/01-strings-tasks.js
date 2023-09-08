@@ -52,9 +52,9 @@ function getRectangleString(width, height) {
 }
 
 function encodeToRot13(str) {
-  return str.replace(/[a-zA-Z]/g, function (char) {
+  return str.replace(/[a-zA-Z]/g, (char) => {
     const base = char <= 'Z' ? 'A'.charCodeAt(0) : 'a'.charCodeAt(0);
-    return String.fromCharCode((char.charCodeAt(0) - base + 13) % 26 + base);
+    return String.fromCharCode(((char.charCodeAt(0) - base + 13) % 26) + base);
   });
 }
 
